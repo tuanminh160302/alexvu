@@ -1,0 +1,250 @@
+@font-face {
+    font-family: bmr;
+    src: url('/fonts/BrownMediumRegular.ttf');
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: bmr;
+}
+
+#curtain {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 1000000;
+    background: #030303;
+    transform: scaleY(1);
+    transform-origin: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gif {
+    height: 20vh;
+    width: 20vh;
+}
+
+.slider-container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: #f4eee6;
+    overflow: hidden;
+}
+
+#h1-red {
+    text-align: center;
+    font-weight: 200;
+    margin: 0;
+    top: 10vh;
+    cursor: default;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+#back {
+    height: 5vh;
+    width: 5vh;
+    position: absolute;
+    z-index: 10000;
+    top: 10vh;
+    left: 5vh;
+    cursor: pointer;
+}
+
+@keyframes trigger-stretch-out {
+    from { transform: scale(1.4);}
+    to{ transform: scale(1);}
+}
+
+@keyframes trigger-stretch-in {
+    from { transform: scale(1);}
+    to{ transform: scale(1.4);}
+}
+
+#color-trigger {
+    height: 3.5vh;
+    width: 3.5vh;
+    z-index: 1000;
+    background: #e5c2ec;
+    border-radius: 50%;
+    position: absolute;
+    left: 57%;
+    top: 15vh;
+    cursor: pointer;
+    transform: scale(1);
+    animation: trigger-stretch-out .5s forwards;
+}
+
+#color-trigger:hover {
+    animation: trigger-stretch-in .5s forwards;
+}
+
+#color-trigger-2 {
+    height: 3.5vh;
+    width: 3.5vh;
+    z-index: 999;
+    background: #f4eee6;
+    border-radius: 50%;
+    position: absolute;
+    left: 40.5vw;
+    top: 15vh;
+    cursor: pointer;
+    transform: scale(1);
+    animation: trigger-stretch-out .5s forwards;
+}
+
+#color-trigger-2:hover {
+    animation: trigger-stretch-in .5s forwards;
+}
+
+
+.slider-items {
+    position: absolute;
+    height: 15vh;
+    width: 12vw;
+    cursor: pointer;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-items-img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.slider-items:nth-child(4n+1) {
+    margin-left: 10.4vw;
+}
+
+.slider-items:nth-child(4n+2) {
+    margin-left: 32.8vw;
+}
+
+.slider-items:nth-child(4n+3) {
+    margin-left: 55.2vw;
+}
+
+.slider-items:nth-child(4n) {
+    margin-left: 77.6vw;
+}
+
+.slider-items:nth-child(1),
+.slider-items:nth-child(2),
+.slider-items:nth-child(3),
+.slider-items:nth-child(4) {
+    margin-top: 27vh;
+}
+
+.slider-items:nth-child(5),
+.slider-items:nth-child(6),
+.slider-items:nth-child(7),
+.slider-items:nth-child(8) {
+    margin-top: 50vh;
+}
+
+.slider-items:nth-child(9),
+.slider-items:nth-child(10),
+.slider-items:nth-child(11),
+.slider-items:nth-child(12){
+    margin-top: 73vh;
+}
+
+.non-touch-slider-items {
+    z-index: 10000;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    transform: scale(0);
+}
+
+.pop-up-slider-items {
+    position: absolute;
+    height: 85vh;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(0) scaleY(0);
+    transform-origin: center;
+    margin: 0;
+    padding: 0;
+}
+
+.pop-up-slider-items-img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+
+#close {
+    height: 2.5vw;
+    width: 2.5vw;
+    background-image: url(/button/close.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100000;
+    cursor: pointer;
+    position: absolute;
+    right: 6vw;
+    top: 6vw;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+#next {
+    height: 2.5vw;
+    width: 2.5vw;
+    background-image: url(/button/next.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 100000;
+    cursor: pointer;
+    right: 6vw;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    display: none;
+}
+
+#prev {
+    height: 2.5vw;
+    width: 2.5vw;
+    background-image: url(/button/prev.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 100000;
+    cursor: pointer;
+    left: 6vw;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    display: none;
+}
+
+
