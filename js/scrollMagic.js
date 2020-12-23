@@ -4,7 +4,7 @@ var scene = new ScrollMagic.Scene({
     triggerElement: '#next-img',
     triggerHook: 0.1,
 })
-scene.addIndicators();
+// scene.addIndicators();
 scene.setTween('.header', .8, { scaleY: 1, ease: Power4.easeOut});
 scene.addTo(controller);
 
