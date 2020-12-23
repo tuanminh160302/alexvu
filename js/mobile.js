@@ -1,15 +1,15 @@
 window.onload = ()=> {
     setTimeout(()=> {
         TweenMax.to('#curtain', 1.1, { scaleY: 0, ease: Power4.easeInOut});
-    }, 3000);
+    });
 
     setTimeout(()=> {
         TweenMax.to('#gif', .5, { opacity: 0});
-    }, 2500);
+    });
 
     setTimeout(()=>{
         TweenMax.to('.html', 0, { delay: 1.1, overflowY: 'auto'});
-    }, 3000)
+    })
 
     TweenMax.to('.loaded', 0, { display: 'none'});
 }
