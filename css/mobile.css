@@ -34,10 +34,20 @@ p {
 #menu-trigger {
     height: 4vh;
     width: 4vh;
-    position: fixed;
-    top: 3vh;
-    right: 3vh;
     transform-origin: right;
+}
+
+#menu-trigger-container {
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4eee6;
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
     z-index: 10000000;
 }
 
@@ -71,11 +81,13 @@ p {
 
 .header {
     width: 100vw;
-    height: 20vh;
+    height: 10vh;
     position: fixed;
     background: #f4eee6;
     top: 0;
     z-index: 100000;
+    transform: scaleY(0);
+    transform-origin: top;
 }
 
 .menu {
@@ -129,11 +141,11 @@ p {
 
 #intro-p {
     color: black;
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 80vw;
     margin-left: 10vw;
-    line-height: 35px;
-    margin-top: 23vh;
+    line-height: 40px;
+    margin-top: 5vh;
     margin-bottom: 0;
 }
 
@@ -159,4 +171,76 @@ p {
 
 #red {
     margin-top: 15vh !important;
+}
+
+.home-img-slider {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    margin-top: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-slider {
+    width: auto;
+    height: 100%;
+}
+
+#img-slider-curtain {
+    background: #f4eee6;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    transform: scaleX(0);
+}
+
+#next-img {
+    position: absolute;
+    height: 4vh;
+    width: 4vh;
+    right: 3vh;
+    top: calc(50vh - 2vh);
+}
+
+#prev-img {
+    position: absolute;
+    height: 4vh;
+    width: 4vh;
+    left: 3vh;
+    top: calc(50vh - 2vh);
+    display: none;
+}
+
+#img-title-container {
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    background: #f4eee6;
+    top: 85vh;
+    left: 0;
+    /* transform: scaleY(0); */
+    transform-origin: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#img-title {
+    color: black;
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+}
+
+#slider-see-more {
+    color: black;
+    margin: 0 0 10px 0;
+    font-size: 1rem;
 }
