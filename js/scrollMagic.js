@@ -24,14 +24,14 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
        //downscroll code
       TweenMax.to('.header', .8, { scaleY: 1, ease: Power4.easeOut});
 
-      TweenMax.to('.scroll-opacity', .3, {opacity: 0})
-      TweenMax.to('#img-title-container', .8, { scaleY: 0, ease: Power4.easeOut});
+    //   TweenMax.to('.scroll-opacity', .3, {opacity: 0})
+    //   TweenMax.to('#img-title-container', .8, { scaleY: 0, ease: Power4.easeOut});
    } else {
        //upscroll code
       TweenMax.to('.header', .8, { scaleY: 0, ease: Power4.easeOut});
 
-      TweenMax.to('.scroll-opacity', .5, {delay: .4, opacity: 1})
-      TweenMax.to('#img-title-container', .8, { scaleY: 1, ease: Power4.easeOut});
+    //   TweenMax.to('.scroll-opacity', .5, {delay: .4, opacity: 1})
+    //   TweenMax.to('#img-title-container', .8, { scaleY: 1, ease: Power4.easeOut});
    }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);

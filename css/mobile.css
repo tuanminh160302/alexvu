@@ -2,9 +2,20 @@ html, body {
     height: 400vh;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+}
+
+.loaded {
+    position: absolute;
+    opacity: 0;
+}
+
+.loaded-img {
+    height: 1px;
+    width: 1px;
 }
 
 #curtain {
@@ -13,12 +24,13 @@ html, body {
     position: absolute;
     margin: 0;
     padding: 0;
-    z-index: 1000000;
+    z-index: 100000000;
     background: #030303;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform-origin: top;
 }
 
 #gif {
