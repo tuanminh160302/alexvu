@@ -53,9 +53,9 @@ let i = 1;
 
 document.getElementById('next-img').addEventListener('click', ()=> {
     TweenMax.to('#img-slider-curtain', 0, { transformOrigin: 'right'});
-    TweenMax.to('#img-slider-curtain', 1.1, { scaleX: 1, ease: Power4.easeInOut});
-    TweenMax.to('#img-slider-curtain', 0, { delay: 1.1, transformOrigin: 'left'});
-    TweenMax.to('#img-slider-curtain', 1.1, { delay: 1.5, scaleX: 0, ease: Power4.easeInOut});
+    TweenMax.to('#img-slider-curtain', .7, { scaleX: 1, ease: Power4.easeInOut});
+    TweenMax.to('#img-slider-curtain', 0, { delay: .7, transformOrigin: 'left'});
+    TweenMax.to('#img-slider-curtain', .7, { delay: 1.5, scaleX: 0, ease: Power4.easeInOut});
 
     i++
     setTimeout(()=> {
@@ -63,11 +63,11 @@ document.getElementById('next-img').addEventListener('click', ()=> {
     },1100);
     if (i > 10) {
         i == 10;
-        TweenMax.to('#next-img', 0, { delay: 1.1, display: 'none'});
+        TweenMax.to('#next-img', 0, { delay: .7, display: 'none'});
     } else if (i == 10) {
-        TweenMax.to('#next-img', 0, { delay: 1.1, display: 'none'});
+        TweenMax.to('#next-img', 0, { delay: .7, display: 'none'});
     } else {
-        TweenMax.to('#prev-img', 0, { delay: 1.1, display: 'block'});
+        TweenMax.to('#prev-img', 0, { delay: .7, display: 'block'});
     }
 
     if (i==1) {
@@ -115,9 +115,9 @@ document.getElementById('next-img').addEventListener('click', ()=> {
 
 document.getElementById('prev-img').addEventListener('click', ()=> {
     TweenMax.to('#img-slider-curtain', 0, { transformOrigin: 'left'});
-    TweenMax.to('#img-slider-curtain', 1.1, { scaleX: 1, ease: Power4.easeInOut});
-    TweenMax.to('#img-slider-curtain', 0, { delay: 1.1, transformOrigin: 'right'});
-    TweenMax.to('#img-slider-curtain', 1.1, { delay: 1.5, scaleX: 0, ease: Power4.easeInOut});
+    TweenMax.to('#img-slider-curtain', .7, { scaleX: 1, ease: Power4.easeInOut});
+    TweenMax.to('#img-slider-curtain', 0, { delay: .7, transformOrigin: 'right'});
+    TweenMax.to('#img-slider-curtain', .7, { delay: 1.5, scaleX: 0, ease: Power4.easeInOut});
 
 
     i--
@@ -126,11 +126,11 @@ document.getElementById('prev-img').addEventListener('click', ()=> {
     },1100);
     if (i < 1) {
         i == 1;
-        TweenMax.to('#prev-img', 0, { delay: 1.1, display: 'none'});
+        TweenMax.to('#prev-img', 0, { delay: .7, display: 'none'});
     } else if (i == 1) {
-        TweenMax.to('#prev-img', 0, { delay: 1.1, display: 'none'});
+        TweenMax.to('#prev-img', 0, { delay: .7, display: 'none'});
     } else {
-        TweenMax.to('#next-img', 0, { delay: 1.1, display: 'block'});
+        TweenMax.to('#next-img', 0, { delay: .7, display: 'block'});
     }
 
     if (i==1) {
