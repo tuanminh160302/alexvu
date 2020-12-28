@@ -69,6 +69,35 @@ document.getElementById('close-trigger').addEventListener('click', ()=> {
 
 let i = 1;
 
+document.getElementById('slider-see-more').addEventListener('click', ()=> {
+    console.log('worked')
+    if (i == 1) {
+        document.location.href = '1-mobile-red.html';
+    } else if (i == 2) {
+        document.location.href = '1-mobile-beige.html';
+    } else if (i == 3) {
+        document.location.href = '1-mobile-black.html';
+    } else if (i == 4) {
+        document.location.href = '1-mobile-green.html';
+    } else if (i == 5) {
+        document.location.href = '1-mobile-magenta.html';
+    } else if (i == 6) {
+        document.location.href = '1-mobile-marble.html';
+    } else if (i == 7) {
+        document.location.href = '1-mobile-pink.html';
+    } else if (i == 8) {
+        document.location.href = '1-mobile-purple.html';
+    } else if (i == 9) {
+        document.location.href = '1-mobile-rainbow.html';
+    } else if (i == 10) { 
+        document.location.href = '1-mobile-white.html';
+    } else if (i < 1) {
+        i==1;
+    } else if (i > 10) {
+        i==10;
+    }
+})
+
 document.getElementById('next-img').addEventListener('click', ()=> {
     TweenMax.to('#img-slider-curtain', 0, { transformOrigin: 'right'});
     TweenMax.to('#img-slider-curtain', .7, { scaleX: 1, ease: Power4.easeInOut});
