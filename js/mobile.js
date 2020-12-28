@@ -18,6 +18,24 @@ window.onbeforeunload = ()=> {
     window.scrollTo(0,0);
 }
 
+document.getElementById('intro-name').addEventListener('click', ()=> {
+    TweenMax.to('#contact-container', 1.1, { scaleY: 1, ease: Power4.easeInOut});
+    TweenMax.to('.html', 0, { overflowY: 'hidden'});
+    TweenMax.to('#close-container-trigger', 0, { delay: 1.1, display: 'block'});
+    TweenMax.to('#close-container-trigger', .5, { delay: 1.1, opacity: 1});
+    TweenMax.to('.contact-close', 0, { delay: 1.1, display: 'block'});
+    TweenMax.to('.contact-close', .5, { delay: 1.1, opacity: 1});
+})
+
+document.getElementById('close-container-trigger').addEventListener('click', ()=> {
+    TweenMax.to('#contact-container', 1.1, { delay: .4, scaleY: 0, ease: Power4.easeInOut});
+    TweenMax.to('.html', 0, { delay: 1.5, overflowY: 'auto'});
+    TweenMax.to('#close-container-trigger', 0, { delay: 1.6, display: 'none'});
+    TweenMax.to('#close-container-trigger', .5, { opacity: 0});
+    TweenMax.to('.contact-close', 0, { delay: 1.6, display: 'none'});
+    TweenMax.to('.contact-close', .5, { opacity: 0});
+})
+
 
 document.getElementById('menu-trigger').addEventListener('click', ()=> {
     TweenMax.to('#menu-trigger', .5, { scaleX: 0});
@@ -174,4 +192,90 @@ document.getElementById('prev-img').addEventListener('click', ()=> {
             document.getElementById('img-title').innerHTML = 'white';
         }, 1100)
     }
+})
+
+
+
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* left swipe */ 
+            TweenMax.to('#video1', .7, { x: '-100vw', ease: Power4.easeOut});
+            TweenMax.to('#videos-title', .3, { opacity: 0});
+            setTimeout(()=> {
+                document.getElementById('videos-title').innerHTML = 'cleansed';
+            }, 350);
+            TweenMax.to('#videos-title', .3, { delay: .4, opacity: 1});
+            TweenMax.to('#videos-indicator-1', .3, { background: 'transparent'});
+            TweenMax.to('#videos-indicator-2', .3, { background: 'gray'});
+        } else {
+            /* right swipe */
+            TweenMax.to('#video1', .7, { x: '0vw', ease: Power4.easeOut})
+            TweenMax.to('#videos-title', .3, { opacity: 0});
+            setTimeout(()=> {
+                document.getElementById('videos-title').innerHTML = 'lookbook fashion video';
+            }, 350);
+            TweenMax.to('#videos-title', .3, { delay: .4, opacity: 1});
+            TweenMax.to('#videos-indicator-1', .3, { background: 'gray'});
+            TweenMax.to('#videos-indicator-2', .3, { background: 'transparent'});
+        }
+    } else {
+        if ( yDiff > 0 ) {
+            /* up swipe */ 
+        } else { 
+            /* down swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+
+document.getElementById('videos-indicator-1').addEventListener('click', ()=> {
+    TweenMax.to('#video1', .7, { x: '0vw', ease: Power4.easeOut})
+    TweenMax.to('#videos-title', .3, { opacity: 0});
+    setTimeout(()=> {
+        document.getElementById('videos-title').innerHTML = 'lookbook fashion video';
+    }, 350);
+    TweenMax.to('#videos-title', .3, { delay: .4, opacity: 1});
+    TweenMax.to('#videos-indicator-1', .3, { background: 'gray'});
+    TweenMax.to('#videos-indicator-2', .3, { background: 'transparent'});
+})
+
+document.getElementById('videos-indicator-2').addEventListener('click', ()=> {
+    TweenMax.to('#video1', .7, { x: '-100vw', ease: Power4.easeOut});
+    TweenMax.to('#videos-title', .3, { opacity: 0});
+    setTimeout(()=> {
+        document.getElementById('videos-title').innerHTML = 'cleansed';
+    }, 350);
+    TweenMax.to('#videos-title', .3, { delay: .4, opacity: 1});
+    TweenMax.to('#videos-indicator-1', .3, { background: 'transparent'});
+    TweenMax.to('#videos-indicator-2', .3, { background: 'gray'}); 
 })

@@ -100,6 +100,9 @@ p {
     z-index: 100000;
     transform: scaleY(0);
     transform-origin: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu {
@@ -123,6 +126,91 @@ p {
     background: black;
 }
 
+#contact-container {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    z-index: 100000000;
+    position: fixed;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+#close-container-trigger {
+    height: 3vh;
+    width: 3vh;
+    position: fixed;
+    top: 3.5vh;
+    right: 3.5vh;
+    transform-origin: right;
+    display: none;
+    opacity: 0;
+    z-index: 100000001;
+}
+
+#fb-about {
+    height: 3vh;
+    width: 3vh;
+    position: absolute;
+    top: 4.5vh;
+    left: 3vh;
+}
+
+#ig-about {
+    height: 3vh;
+    width: 3vh;
+    position: absolute;
+    top: 4.5vh;
+    left: 9vh;
+}
+
+.information{
+    color: white;
+}
+
+#about-title {
+    font-size: 1.5em;
+    position: absolute;
+    top: 15vh;
+    left: 10vw;
+    border: 1px solid white;
+    padding: 15px;
+}
+
+#about-name {
+    font-size: 1em;
+    position: absolute;
+    top: 33vh;
+    left: 15vw;
+}
+
+#about-phone {
+    font-size: 1em;
+    position: absolute;
+    top: 40vh;
+    left: 15vw;
+}
+
+#about-email {
+    font-size: 1em;
+    position: absolute;
+    top: 47vh;
+    left: 15vw;
+}
+
+#about-credit {
+    font-size: 1.1em;
+    position: absolute;
+    bottom: 7vh;
+    left: 15vw;
+}
+
+.contact-close {
+    display: none;
+    opacity: 0;
+}
+
 .container {
     background: #f4eee6;
     height: 400vh;
@@ -134,21 +222,13 @@ p {
 
 #intro-name {
     color: black;
-    font-size: 3rem;
+    font-size: 1rem;
     left: 10vw;
-    bottom: 0;
     position: absolute;
     font-weight: bold;
     width: max-content;
     margin: 0;
-}
-
-#intro-name::after {
-    content: '';
-    display: block;
-    border-bottom: 2px solid black;
-    transform-origin: right;
-    margin-top: 5px;
+    opacity: 0;
 }
 
 #intro-p {
@@ -255,4 +335,76 @@ p {
     color: black;
     margin: 0 0 10px 0;
     font-size: 1rem;
+}
+
+.hr {
+    width: 80%;
+    height: 1px;
+    background: black;
+    border: 0px;
+    margin-top: 5vh;
+}
+
+.videos {
+    color: black;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+#videos-guide {
+    color: black;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+}
+  
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-20%); }
+    0% { transform: translateX(0); }
+}
+
+.vids {
+    width: 100vw;
+    height: 60vw;
+}
+
+#video1 {
+    position: relative;
+    left: 0;
+    z-index: 1;
+}
+
+#video2 {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+}
+
+#videos-title {
+    color: black;
+    text-align: center;
+}
+
+.videos-trigger {
+    opacity: 0;
+}
+
+.videos-indicator {
+    height: 3px;
+    width: 30px;
+    border: .5px solid gray;
+    margin: 0;
+    position: absolute;
+}
+
+#videos-indicator-1 {
+    left: calc(50vw - 30px - 5px);
+    background: gray
+}
+
+#videos-indicator-2 {
+    right: calc(50vw - 30px - 5px);
 }

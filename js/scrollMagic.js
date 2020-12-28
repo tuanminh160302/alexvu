@@ -8,6 +8,23 @@ var scene = new ScrollMagic.Scene({
 scene.setTween('.header', .8, { scaleY: 1, ease: Power4.easeOut});
 scene.addTo(controller);
 
+var scene = new ScrollMagic.Scene({
+    triggerElement: '#next-img',
+    triggerHook: 0.1,
+})
+// scene.addIndicators();
+scene.setTween('#intro-name', .5, { delay: .6, opacity: 1});
+scene.addTo(controller);
+
+
+var scene = new ScrollMagic.Scene({
+    triggerElement: '.hr',
+    triggerHook: 0.2,
+    reverse: false,
+})
+// scene.addIndicators();
+scene.setTween('.videos-trigger', 1, { opacity: 1});
+scene.addTo(controller);
 
 
 
