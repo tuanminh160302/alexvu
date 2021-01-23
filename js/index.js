@@ -1,11 +1,11 @@
 window.onload = ()=> {
     setTimeout(()=> {
         TweenMax.to('#curtain', 1.1, { scaleY: 0, ease: Power4.easeInOut});
-    }, 3000);
+    }, 500);
 
     setTimeout(()=> {
         TweenMax.to('#gif', .5, { opacity: 0});
-    }, 2500);
+    }, 0);
 }
 
 jQuery(document).ready(function() {
@@ -95,21 +95,21 @@ document.getElementById('about').addEventListener('mouseout', ()=> {
 })
 
 
-document.getElementById('alex-vu-animated').addEventListener('mouseover', function(){
-    TweenMax.to('#hr-animated', .4, { scaleX: 0});
-});
+// document.getElementById('alex-vu-animated').addEventListener('mouseover', function(){
+//     TweenMax.to('#hr-animated', .4, { scaleX: 0});
+// });
 
-document.getElementById('alex-vu-animated').addEventListener('mouseout', function(){
-    TweenMax.to('#hr-animated', .4, { scaleX: 1});
-});
+// document.getElementById('alex-vu-animated').addEventListener('mouseout', function(){
+//     TweenMax.to('#hr-animated', .4, { scaleX: 1});
+// });
 
-document.getElementById('alex-vu-animated').addEventListener('mouseover', ()=> {
-    TweenMax.to('#circle', .3, { backgroundColor: '#d84432'});
-})
+// document.getElementById('alex-vu-animated').addEventListener('mouseover', ()=> {
+//     TweenMax.to('#circle', .3, { backgroundColor: '#d84432'});
+// })
 
-document.getElementById('alex-vu-animated').addEventListener('mouseout', ()=> {
-    TweenMax.to('#circle', .3, { backgroundColor: 'transparent'});
-})
+// document.getElementById('alex-vu-animated').addEventListener('mouseout', ()=> {
+//     TweenMax.to('#circle', .3, { backgroundColor: 'transparent'});
+// })
 
 document.getElementById('fb').addEventListener('mouseover', ()=> {
     TweenMax.to('#circle', .3, { backgroundColor: '#d84432'});

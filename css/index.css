@@ -540,7 +540,7 @@ html, body {
     z-index: 900;
 }
 
-#alex-vu-animated {
+/* #alex-vu-animated {
     cursor: pointer;
 }
 
@@ -559,7 +559,7 @@ html, body {
 #alex-vu-animated:hover::before {
     transform: scaleX(1);
     transition: .5s;
-}
+} */
 
 .hr-horizontal {
     transform-origin: right;
