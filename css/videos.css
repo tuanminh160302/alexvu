@@ -29,7 +29,7 @@ html, body {
     margin: 0;
     padding: 0;
     z-index: 1000000;
-    background: #030303;
+    background: #f6f5f5;
     transform: scaleY(1);
     transform-origin: top;
     display: flex;

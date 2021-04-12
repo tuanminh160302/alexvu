@@ -1,12 +1,16 @@
 window.onload = ()=> {
     setTimeout(()=> {
-        TweenMax.to('#curtain', 1.1, { scaleY: 0, ease: Power4.easeInOut});
-    }, 500);
-
-    setTimeout(()=> {
         TweenMax.to('#gif', .5, { opacity: 0});
+        TweenMax.to('#preloader-text', 0, { delay: .5, display: 'block'})
+        TweenMax.to('#preloader-text', .5, { delay: .5, opacity: 1})
     }, 0);
 }
+
+document.querySelector('#preloader-text').addEventListener('click', () => {
+    TweenMax.to('#preloader-text', 0, { delay: .5, display: 'none'})
+    TweenMax.to('#preloader-text', .5, { opacity: 0})
+    TweenMax.to('#curtain', 1.1, { delay: .5, scaleY: 0, ease: Power4.easeInOut});
+})
 
 jQuery(document).ready(function() {
 
